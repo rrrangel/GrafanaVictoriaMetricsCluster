@@ -12,6 +12,8 @@ VictoriaMetrics is a fast, cost-effective, and scalable time series database. It
 
 In our setup, VictoriaMetrics is configured to store its data in a Docker volume named `victoria-metrics-data`.
 
+>**Note**: You must add a `grafana-storage` and a `victoria-metrics-data` directory in the root of your project for data to be stored and persist. 
+
 ### Grafana
 
 Grafana is a multi-platform open-source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources.
@@ -29,13 +31,12 @@ After starting the services, you can access Grafana at http://localhost:3000 and
 
 Please note that you might need to adjust this configuration according to your specific needs. For example, you might want to add environment variables for setting up Grafana or use a custom configuration file.
 
+## Links
+[File Structure](docs/filestructure.md)
+
 ## Conclusion
 This README provides a brief overview of the services defined in the Docker Compose file and instructions on how to use them. You can add more details based on your specific needs and setup.
 
-Let me know if you need further assistance! 😊
-
 
 ## TO DO
-- Look into persistance in volumes
-    - Grafana does not persist at the moment
-- Document VMAgent and ingestion
+- Document VMAgent/PROMAgent for data ingestion
