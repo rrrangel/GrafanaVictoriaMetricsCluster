@@ -1,0 +1,22 @@
+version: '3'
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics
+    command: -storageDataPath=/Users/rrangel/Documents/Training/Grafana_VM_cluster/victoria-metrics-data
+    volumes:
+      - victoria-metrics-data:/Users/rrangel/Documents/Training/Grafana_VM_cluster/victoria-metrics-data
+    ports:
+      - 8428:8428
+
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - victoriametrics
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/Users/rrangel/Documents/Training/Grafana_VM_cluster/grafana
+
+volumes:
+  victoria-metrics-data:
+  grafana-storage:
